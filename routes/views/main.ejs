@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/952535fcd4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="https://static.insales-cdn.com/files/1/8001/16777025/original/Frame_684b138bcc7f48280840f7c7a6efeefe.svg">
+
+
+    <title>Online shop</title>
+
+</head>
+<body>
+<header>
+    <div class="container-fluid" style="background-color:#FDF6EC">
+        <div class="row">
+            <h6 style="margin-right: 20px;">+7 777 777 77 77</h6>
+            <div class="dropdown">
+                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                    Choose your country
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <p class="ml-auto">Delivery | Pickup points | The shops | Return of goods </p>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="margin-top:8px;">
+        <div class="row">
+            <a href="/"><img src="https://static.insales-cdn.com/files/1/8001/16777025/original/Frame_684b138bcc7f48280840f7c7a6efeefe.svg" alt="logo" style="margin-left: 30px;"></a>
+            <form class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">search</label>
+                    <input  style="width:500px; margin-left:230px; background-color:#FDF6EC;" type="password" class="form-control" id="inputPassword2" placeholder="Search">
+                </div>
+                <button type="submit" style="margin-left:0;" class="btn mb-2"><i class="fas fa-search"></i></button>
+            </form>
+
+            <div class="row ml-auto">
+                <h2 style="margin-top:10px; margin-right:40px;"><a href="sign" style="color:black;"><i class="fa fa-user"></i></a></h2>
+                <h2 style="margin-top:10px; margin-right:40px;"><a href="compare"><i class="fa fa-filter"></i></a> </h2>
+                <h2 style="margin-top:10px; margin-right:40px;"><a href="cart" style="color:black;"><i class="fas fa-shopping-cart"></i></a></h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container-fluid" style="padding-left:0;padding-right:0;">
+        <nav class="navbar navbar-expand-lg navbar-light  " style="background-color:#DAB88B;margin-top:20px; margin-left:0;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="catalog">Catalog <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="login">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+
+
+
+<div class="container-fluid" style="margin-top:50px; margin-left:40px; margin-right: 20px;">
+    <div class="row">
+        <div class="col-8">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://static.insales-cdn.com/r/Tly27Ccd0i8/rs:fit:1408:0:1/q:100/plain/files/1/7000/17300312/original/1.jpg@webp" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>Special offer for new customers</h2>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://static.insales-cdn.com/r/XexfjdrTu4M/rs:fit:1408:0:1/q:100/plain/files/1/7001/17300313/original/12.jpg@webp" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>New collection</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <img src="https://static.insales-cdn.com/r/T8wKJRELV6o/rs:fit:500:500:1/q:100/plain/files/1/7002/17300314/original/2.jpg@webp" style="height:70vh;  margin-left: auto; margin-right: auto;" alt="">
+            <h2>Home decor</h2>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="New-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">New</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="Bestsellers-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bestsellers</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="New-tab">
+
+
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/ilp3IK1gz9Y/rs:fit:420:0:1/q:100/plain/images/products/1/6680/417651224/large_%D0%91%D0%B0%D1%80%D0%B1%D0%B5%D0%BA%D1%8E_%D1%81_%D0%BA%D1%80%D1%8B%D1%88%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D1%81%D0%B8%D0%BA%D0%B0%D1%85__d_44_%D1%81%D0%BC.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Barbecue with a lid on wheels, d=44 cm</h5>
+                        <p class="card-text" name="price">
+                            <%=currency*14990%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/88uDslq1CDk/rs:fit:420:0:1/q:100/plain/images/products/1/479/417522143/large_artikyl_0010_11.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Hat storage basket with lid</h5>
+                        <p class="card-text" name="price"><%=currency*1890%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/kj8rfIC6eVQ/rs:fit:420:0:1/q:100/plain/images/products/1/400/417530256/large_%D0%91%D0%B5%D1%82%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BB%D1%8E%D1%81%D1%82%D1%80%D0%B0__Kenq.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Concrete chandelier, Kenq</h5>
+                        <p class="card-text" name="price"><%=currency*6890%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/BHA0bg9LnIU/rs:fit:420:0:1/q:100/plain/images/products/1/5113/417543161/large_%D0%9E%D0%B1%D0%B5%D0%B4%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D0%B7_12_%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D0%BE%D0%B2_%D0%BD%D0%B0_4_%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D1%8B_%D0%94%D0%B0%D0%B9%D0%BC%D0%BE%D0%BD%D0%B4__%D0%B2_%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D1%83%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%BA%D0%B5.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Dinner service 12 items for 4 persons Diamond, in a gift box</h5>
+                        <p class="card-text" name="price"><%=currency*4690%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/PY7pGOHaDLg/rs:fit:420:0:1/q:100/plain/images/products/1/6340/417913028/large_1600__5_.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Green garden swing with canopy</h5>
+                        <p class="card-text" name="price"><%=currency*12890%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/T63HblFdqFg/rs:fit:420:0:1/q:100/plain/images/products/1/1362/417916242/large_1600__1_.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Garden sofa with soft cushions and coffee table, Zaragoza</h5>
+                        <p class="card-text" name="price"><%=currency*28890%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/KXuESjkeOvY/rs:fit:420:0:1/q:100/plain/images/products/1/316/417521980/large_artikyl_0009_10.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Basket drawer, closet storage, with rope handle, Trend</h5>
+                        <p class="card-text" name="price"><%=currency*1090%> <%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/KvGsvzYmxds/rs:fit:420:0:1/q:100/plain/images/products/1/1368/417998168/large_%D0%91%D0%B5%D0%B7_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8-6.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Spathiphyllum</h5>
+                        <p class="card-text" name="price"><%=currency*1550%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/yJkr5Spujf4/rs:fit:420:0:1/q:100/plain/images/products/1/6814/417651358/large_%D0%9A%D0%BE%D0%BC%D0%BF%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%B3%D1%80%D0%B8%D0%BB%D1%8C__41_%D1%85_36_%D1%85_57_%D1%81%D0%BC__%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D1%8B%D0%B9.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Compact ceramic outdoor grill, 41 x 36 x 57 cm, green</h5>
+                        <p class="card-text" name="price"><%=currency*59990%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/BJYZroWpDIU/rs:fit:420:0:1/q:100/plain/images/products/1/6089/417544137/large_%D0%9E%D0%B1%D0%B5%D0%B4%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D0%B7_BK-9800__18_%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D0%BE%D0%B2__6_%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Dinner service, 18 items, 6 persons</h5>
+                        <p class="card-text" name="price"><%=currency*5549%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Bestsellers-tab">
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/U0tHbdhKbis/rs:fit:420:0:1/q:100/plain/images/products/1/4006/417517478/large_artikyl_0002_3.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cart</h5>
+                        <p class="card-text" name="price"><%=currency*690%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/GdAWkKEe6LQ/rs:fit:420:0:1/q:100/plain/images/products/1/754/417997554/large_%D0%91%D0%B5%D0%B7_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8-4.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Zamioculcas</h5>
+                        <p class="card-text" name="price"><%=currency*1600%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/_XwFNczyLYA/rs:fit:420:0:1/q:100/plain/images/products/1/1320/417531176/large_%D0%A1%D0%B2%D0%B5%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_%D0%BF%D0%BE%D0%B4%D0%B2%D0%B5%D1%81%D0%BD%D0%BE%D0%B9__%D0%BC%D0%B5%D0%B4%D0%BD%D0%BE-%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B3%D0%BE_%D1%86%D0%B2%D0%B5%D1%82%D0%B0__%D1%80%D1%83%D1%87%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pendant lamp, copper-gold color, handmade</h5>
+                        <p class="card-text" name="price"><%=currency*7990%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/BJYZroWpDIU/rs:fit:420:0:1/q:100/plain/images/products/1/6089/417544137/large_%D0%9E%D0%B1%D0%B5%D0%B4%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D0%B7_BK-9800__18_%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D0%BE%D0%B2__6_%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Dinner service, 18 items, 6 persons</h5>
+                        <p class="card-text" name="price"><%=currency*5549%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/623vf7E2jls/rs:fit:420:0:1/q:100/plain/images/products/1/813/417522477/large_artikyl_0012_13.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Large basket with handle, Maria</h5>
+                        <p class="card-text" name="price"><%=currency*1380%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/0IWgJih7Gek/rs:fit:420:0:1/q:100/plain/images/products/1/6754/417651298/large_%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD_%D0%9C%D0%B0%D0%BD%D0%B3%D0%B0%D0%BB_%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%8C__%D1%81_%D0%BE%D1%82%D0%BA%D0%B8%D0%B4%D0%BD%D0%BE%D0%B9_%D0%BA%D1%80%D1%8B%D1%88%D0%BA%D0%BE%D0%B9_%D0%B8_%D0%B7%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%BC_.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kazan Mangal Siberia (with hinged lid and ash pan)</h5>
+                        <p class="card-text" name="price"><%=currency*22490%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/noyz2QWyrto/rs:fit:420:0:1/q:100/plain/images/products/1/5434/417912122/large_1600.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Set Yalta, a table with a glass top and two rattan chairs</h5>
+                        <p class="card-text" name="price"><%=currency*26590%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/-gW9VgIyG48/rs:fit:420:0:1/q:100/plain/images/products/1/3280/417549520/large_%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D0%B7_%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9_%D0%94%D0%BE%D0%B1%D1%80%D1%83%D1%88%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%B0%D1%80%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B7%D0%B0%D0%B2%D0%BE%D0%B4__%D0%93%D0%BE%D0%BB%D1%83%D0%B1%D0%BA%D0%B0._%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D0%BA___36_%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D0%BE%D0%B2__2_%D0%B2%D0%B8%D0%B4%D0%B0_%D1%82%D0%B0%D1%80%D0%B5%D0%BB%D0%BE%D0%BA__%D0%B4%D0%B5.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Table service porcelain factory "Porcelain porcelain", 36 objects, 2 types of plates, decal and chandelier layering</h5>
+                        <p class="card-text" name="price"><%=currency*16490%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/n8qFHu9f7VM/rs:fit:420:0:1/q:100/plain/images/products/1/2039/417998839/large_%D0%91%D0%B5%D0%B7_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8-7.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Yucca palm</h5>
+                        <p class="card-text" name="price"><%=currency*980%><%=symbol1%></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://static.insales-cdn.com/r/BBQCeKKj-vU/rs:fit:420:0:1/q:100/plain/images/products/1/6645/417520117/large_artikyl_0006_7.jpg@webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Wicker basket, Venice</h5>
+                        <p class="card-text" name="price"><%=currency*759%><%=symbol1%>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>  </div>
+</div>
+
+
+
+
+
+
+
+<div class="container-fluid ml-10 mr-10 mt-20" style="margin-top: 50px;
+  padding-left: 0px;
+    padding-right: 0px;">
+    <footer class="py-5" style="padding-left:100px;">
+        <img  src="https://static.insales-cdn.com/files/1/8002/16777026/original/Frame_a59e4a54556dccaceefb1b7c17d4ae67.svg" alt style="margin-bottom: 40px;" alt="">
+        <div class="row mt-100">
+            <div class="col-2">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Shipping and payment</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Pickup points</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">The shops</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Return of goods</a></li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">To corporative clients</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Service center</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Suppliers</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Services</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Gift card</a></li>
+                    <li class="nav-item mb-2"><a href="#" class=" p-0 text-muted">Articles</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="d-flex justify-content-between py-4 my-4 border-top">
+            <p>© 2021 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+<!-- jQuery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<!-- Popper -->
+<script src="js/popper.min.js"></script>
+
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
