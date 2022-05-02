@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs') %>
+<body>
+<%- include('header.ejs') %>
+
+
+<div class="container-fluid">
+    <div style="margin-left:auto;margin-right:auto; margin-top:50px;">
+        <form style="margin-left:auto;margin-right:auto;width:1000px;">
+            <div class="form-group">
+                <label for="exampleInputEmail1"><h4>Email address</h4></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1"><h4>Password</h4></label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn" style="background-color:#DAB88B;margin-right:20px;">Log in</button>
+                <h5 style="color:#DAB88B;margin-right:20px;margin-top:10px;background-color:#FDF6EC;">Restore password</h5>
+                <a href="sign/register" style="color:#DAB88B;"><h5 style="color:#DAB88B;margin-top:10px;background-color:#FDF6EC;">Register</h5></a>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<%- include('footer.ejs')%>
+</body>
+</html>

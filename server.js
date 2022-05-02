@@ -1,13 +1,31 @@
 const express = require("express");
-const app = express();
-const port = 3000;
 const bodyparser = require('body-parser')
 const ejs = require('ejs')
-app.use(express.static("public"))
-const https = require('https')
+const mongoose = require('mongoose')
+const dbConfig = require('../2nd_assaignment/config/database.config.js');
+const UserRoute = require('./routes/User')
 const {response} = require('express')
+const https = require('https')
+
+const app = express();
+const port = 3000;
+
 app.use(bodyparser.urlencoded({extended:true}))
 app.set('view engine', 'ejs')
+app.use(express.static("public"))
+app.use(bodyparser.json())
+app.use('/user',UserRoute)
+
+
+mongoose.Promise = global.Promise;
+mongoose.connect(dbConfig.url, {
+    useNewUrlParser: true
+}).then(() => {
+    console.log("Databse Connected Successfully!!");
+}).catch(err => {
+    console.log('Could not connect to the database', err);
+    process.exit();
+});
 
 
 app.get('/',(req,res)=>{
@@ -25,7 +43,7 @@ app.get('/',(req,res)=>{
                     let text2 = JSON.parse(data)
                     let text3 = Number(text2.RUB_KZT)
                     let price = Math.round(text3)
-                    res.render(__dirname+'/routes/views/main.ejs',{
+                    res.render(__dirname+'/views/main.ejs',{
                         currency: price,
                         symbol1: symbol
                     })
@@ -36,6 +54,8 @@ app.get('/',(req,res)=>{
 })
 
 
+// mongoose.connect()
+
 app.use("/aboutus", require("./routes/aboutus"));
 app.use("/cart", require("./routes/cart"));
 app.use("/catalog", require("./routes/catalog"));
@@ -43,7 +63,7 @@ app.use("/compare", require("./routes/compare"));
 app.use("/contacts", require("./routes/contacts"));
 app.use("/login", require("./routes/login"));
 app.use("/sign", require("./routes/sign"));
-app.use("/sign/register", require("./routes/register"));
+app.use("/register", require("./routes/register"));
 
 app.listen(port, () =>
     console.log(`App listening at http://localhost:${port}`)

@@ -4,5 +4,5 @@ const ejs = require('ejs')
 
 router
     .route("/")
-    .get((req, res) => res.render(__dirname+"/views/main.ejs"))
+    .get((req, res) => res.render("../views/main.ejs"))
 module.exports = router;
