@@ -14,6 +14,7 @@ const orderSchema = new Schema({
         {
             name: {
                 type: String,
+                ref: "positions"
             },
             quantity: {
                 type: Number,

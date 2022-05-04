@@ -26,6 +26,10 @@ const userSchema = new Schema({
         street: String,
         city: String,
     },
+    roles: [
+        {type: String,
+        ref: 'roles'}
+    ]
 })
 
 userSchema.methods.sayHi = function() {
@@ -50,10 +54,10 @@ userSchema.pre('save', function (next){
     throw new Error("Fail Save")
 })
 
-userSchema.post('save', function (doc, next){
-    doc.sayHi()
-    next()
-})
+// userSchema.post('save', function (doc, next){
+//     doc.sayHi()
+//     next()
+// })
 
 
 module.exports = mongoose.model("users", userSchema)

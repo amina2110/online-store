@@ -1,34 +1,30 @@
-const UserModel = require('../models/User')
-
+const CategoryModel = require('../models/Category')
 // Create and Save a new user
 exports.create = async (req, res) => {
-    if (!req.body.email && !req.body.name && !req.body.password && !req.body.address) {
+    if (!req.body.name && !req.body.imageSrc) {
         res.status(400).send({ message: "Content can not be empty!" });
     }
 
-    const user = new UserModel({
+    const order = new OrderModel({
         name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        address: req.body.address
+        imageSrc: req.body.imageSrc,
     });
 
-    await user.save().then(data => {
-        // res.send({
-        //     message:"User created successfully!!",
-        //     user:data
-        // });
-        res.render('sign.ejs')
+    await order.save().then(data => {
+        res.send({
+            message:"Category created successfully!!",
+            user:data
+        });
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while creating user"
+            message: err.message || "Some error occurred while creating category"
         });
     });
 };
 // Retrieve all users from the database.
 exports.findAll = async (req, res) => {
     try {
-        const user = await UserModel.find();
+        const user = await CategoryModel.find();
         res.status(200).json(user);
     } catch(error) {
         res.status(404).json({message: error.message});
@@ -37,7 +33,7 @@ exports.findAll = async (req, res) => {
 // Find a single User with an id
 exports.findOne = async (req, res) => {
     try {
-        const user = await UserModel.findById(req.params.id);
+        const user = await CategoryModel.findById(req.params.id);
         res.status(200).json(user);
     } catch(error) {
         res.status(404).json({ message: error.message});
@@ -53,13 +49,13 @@ exports.update = async (req, res) => {
 
     const id = req.params.id;
 
-    await UserModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
+    await CategoryModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
         if (!data) {
             res.status(404).send({
-                message: `User not found.`
+                message: `Category not found.`
             });
         }else{
-            res.send({ message: "User updated successfully." })
+            res.send({ message: "Category updated successfully." })
         }
     }).catch(err => {
         res.status(500).send({
@@ -69,14 +65,14 @@ exports.update = async (req, res) => {
 };
 // Delete a user with the specified id in the request
 exports.destroy = async (req, res) => {
-    await UserModel.findByIdAndRemove(req.params.id).then(data => {
+    await CategoryModel.findByIdAndRemove(req.params.id).then(data => {
         if (!data) {
             res.status(404).send({
-                message: `User not found.`
+                message: `Category not found.`
             });
         } else {
             res.send({
-                message: "User deleted successfully!"
+                message: "Category deleted successfully!"
             });
         }
     }).catch(err => {
