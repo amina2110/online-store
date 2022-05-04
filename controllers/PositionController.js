@@ -1,34 +1,32 @@
-const UserModel = require('../models/User')
-
+const PositionModel = require('../models/Position')
 // Create and Save a new user
 exports.create = async (req, res) => {
-    if (!req.body.email && !req.body.name && !req.body.password && !req.body.address) {
+    if (!req.body.name && !req.body.cost && !req.body.category && !req.body.user) {
         res.status(400).send({ message: "Content can not be empty!" });
     }
 
-    const user = new UserModel({
+    const position = new PositionModel({
         name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        address: req.body.address
+        cost: req.body.cost,
+        category: req.body.category,
+        user: req.body.user
     });
 
-    await user.save().then(data => {
-        // res.send({
-        //     message:"User created successfully!!",
-        //     user:data
-        // });
-        res.render('sign.ejs')
+    await position.save().then(data => {
+        res.send({
+            message:"Position created successfully!!",
+            user:data
+        });
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while creating user"
+            message: err.message || "Some error occurred while creating position"
         });
     });
 };
 // Retrieve all users from the database.
 exports.findAll = async (req, res) => {
     try {
-        const user = await UserModel.find();
+        const user = await PositionModel.find();
         res.status(200).json(user);
     } catch(error) {
         res.status(404).json({message: error.message});
@@ -37,7 +35,7 @@ exports.findAll = async (req, res) => {
 // Find a single User with an id
 exports.findOne = async (req, res) => {
     try {
-        const user = await UserModel.findById(req.params.id);
+        const user = await PositionModel.findById(req.params.id);
         res.status(200).json(user);
     } catch(error) {
         res.status(404).json({ message: error.message});
@@ -53,13 +51,13 @@ exports.update = async (req, res) => {
 
     const id = req.params.id;
 
-    await UserModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
+    await PositionModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
         if (!data) {
             res.status(404).send({
-                message: `User not found.`
+                message: `Position not found.`
             });
         }else{
-            res.send({ message: "User updated successfully." })
+            res.send({ message: "Position updated successfully." })
         }
     }).catch(err => {
         res.status(500).send({
@@ -69,14 +67,14 @@ exports.update = async (req, res) => {
 };
 // Delete a user with the specified id in the request
 exports.destroy = async (req, res) => {
-    await UserModel.findByIdAndRemove(req.params.id).then(data => {
+    await PositionModel.findByIdAndRemove(req.params.id).then(data => {
         if (!data) {
             res.status(404).send({
-                message: `User not found.`
+                message: `Position not found.`
             });
         } else {
             res.send({
-                message: "User deleted successfully!"
+                message: "Position deleted successfully!"
             });
         }
     }).catch(err => {
