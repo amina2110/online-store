@@ -8,6 +8,8 @@ const OrderRoute = require('./routes/OrderRoute')
 const CategoryRoute = require('./routes/CategoryRoute')
 const PositionRoute = require('./routes/PositionRoute')
 const RoleRoute = require('./routes/RoleRoute')
+const CartRoute = require('./routes/CartRoute')
+const CartController = require(__dirname+'/controllers/CartController')
 const {response} = require('express')
 const https = require('https')
 
@@ -29,15 +31,12 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-
 app.use('/user',UserRoute)
 app.use('/category',CategoryRoute)
 app.use('/order',OrderRoute)
 app.use('/position',PositionRoute)
 app.use('/role',RoleRoute)
-
-
-
+// app.use('/cart',CartRoute)
 
 
 app.get('/',(req,res)=>{
@@ -64,8 +63,11 @@ app.get('/',(req,res)=>{
         })
     })
 })
+app.post('/',(async (req, res) => {
+    await CartController.create(req, res)
+}))
 
-
+// app.use('/',require("./routes/main"))
 app.use("/aboutus", require("./routes/aboutus"));
 app.use("/cart", require("./routes/cart"));
 app.use("/catalog", require("./routes/catalog"));

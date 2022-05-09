@@ -18,7 +18,9 @@ exports.create = async (req, res) => {
         //     message:"User created successfully!!",
         //     user:data
         // });
-        res.render('sign.ejs')
+
+        res.render('sign.ejs',{isSaved: true})
+
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating user"

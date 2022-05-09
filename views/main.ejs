@@ -38,10 +38,6 @@
 
 
 
-
-
-
-
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
         <a class="nav-link active" id="New-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">New</a>
@@ -52,23 +48,28 @@
 </ul>
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="New-tab">
-
-
         <div class="row row-cols-1 row-cols-md-5 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://static.insales-cdn.com/r/ilp3IK1gz9Y/rs:fit:420:0:1/q:100/plain/images/products/1/6680/417651224/large_%D0%91%D0%B0%D1%80%D0%B1%D0%B5%D0%BA%D1%8E_%D1%81_%D0%BA%D1%80%D1%8B%D1%88%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D1%81%D0%B8%D0%BA%D0%B0%D1%85__d_44_%D1%81%D0%BC.jpg@webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Barbecue with a lid on wheels, d=44 cm</h5>
-                        <p class="card-text" name="price">
-                            <%=currency*14990%><%=symbol1%>
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted ml-auto"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;"></i><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></small>
+            <form method="post">
+                <div class="col">
+                    <div class="card h-100">
+                        <input type="hidden" name="img" value="https://static.insales-cdn.com/r/ilp3IK1gz9Y/rs:fit:420:0:1/q:100/plain/images/products/1/6680/417651224/large_%D0%91%D0%B0%D1%80%D0%B1%D0%B5%D0%BA%D1%8E_%D1%81_%D0%BA%D1%80%D1%8B%D1%88%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D1%81%D0%B8%D0%BA%D0%B0%D1%85__d_44_%D1%81%D0%BC.jpg@webp" /><img id="img"  src="https://static.insales-cdn.com/r/ilp3IK1gz9Y/rs:fit:420:0:1/q:100/plain/images/products/1/6680/417651224/large_%D0%91%D0%B0%D1%80%D0%B1%D0%B5%D0%BA%D1%8E_%D1%81_%D0%BA%D1%80%D1%8B%D1%88%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D1%81%D0%B8%D0%BA%D0%B0%D1%85__d_44_%D1%81%D0%BC.jpg@webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <input type="hidden" name="name" value="Barbecue with a lid on wheels, d=44 cm" /><b class="card-title" id="name"> Barbecue with a lid on wheels, d=44 cm </b>
+                            <input type="hidden" name="cost" value="<%=currency*14990%><%=symbol1%>" /><p class="card-text" name="cost" >
+                                <%=currency*14990%><%=symbol1%>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted ml-auto">
+                                <button type="submit"><i class="fa fa-heart-o fa-2x" aria-hidden="true" style="margin-right:20px;border: none;"></i></button>
+                                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                            </small>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
+
+
             <div class="col">
                 <div class="card h-100">
                     <img src="https://static.insales-cdn.com/r/88uDslq1CDk/rs:fit:420:0:1/q:100/plain/images/products/1/479/417522143/large_artikyl_0010_11.jpg@webp" class="card-img-top" alt="...">
@@ -187,10 +188,6 @@
             </div>
         </div>
     </div>
-
-
-
-
 
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Bestsellers-tab">
         <div class="row row-cols-1 row-cols-md-5 g-4">
@@ -326,15 +323,24 @@
         </div>  </div>
 </div>
 
-
-
-
-
-
-
-
-
 <%- include('footer.ejs')%>
+<!--<script>-->
+<!--    const mongoose = require('mongoose')-->
+<!--    // const OrderController = require('../controllers/OrderController')-->
+<!--    const OrderModel = require('../models/Order')-->
+<!--    async function myFunction() {-->
+
+<!--        const order = new OrderModel({-->
+<!--            img: "Hello",-->
+<!--        })-->
+
+<!--        await order.save().then(data => {-->
+<!--            console.log("The data was saved")-->
+<!--    })-->
+<!--        alert("Hello")-->
+<!--    }-->
+
+<!--</script>-->
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

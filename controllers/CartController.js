@@ -1,25 +1,30 @@
-const OrderModel = require('../models/Order')
+const cartModel = require('../models/Cart')
 // Create and Save a new user
 exports.create = async (req, res) => {
-    if (!req.body.img
+    if (!req.body.name
         // !req.body.date && !req.body.order && !req.body.list && !req.body.user
     ) {
         res.status(400).send({ message: "Content can not be empty!" });
     }
 
-    const order = new OrderModel({
+    const cart = new cartModel({
         date: req.body.date,
-        order: req.body.order,
-        list: req.body.list,
-        user: req.body.user,
         img: req.body.img,
+        name: req.body.name,
+        cost: req.body.cost,
     });
 
-    await order.save().then(data => {
+    await cart.save().then(data => {
         res.send({
             message:"Order created successfully!!",
             user:data
         });
+        res.render("cart.ejs",{
+            // isEmpty: false,
+            // name: req.body.name,
+            img: req.body.img,
+            // cost: req.body.cost,
+        })
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating order"
@@ -29,7 +34,7 @@ exports.create = async (req, res) => {
 // Retrieve all users from the database.
 exports.findAll = async (req, res) => {
     try {
-        const user = await OrderModel.find();
+        const user = await cartModel.find();
         res.status(200).json(user);
     } catch(error) {
         res.status(404).json({message: error.message});
@@ -38,7 +43,7 @@ exports.findAll = async (req, res) => {
 // Find a single User with an id
 exports.findOne = async (req, res) => {
     try {
-        const user = await OrderModel.findById(req.params.id);
+        const user = await cartModel.findById(req.params.id);
         res.status(200).json(user);
     } catch(error) {
         res.status(404).json({ message: error.message});
@@ -54,7 +59,7 @@ exports.update = async (req, res) => {
 
     const id = req.params.id;
 
-    await OrderModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
+    await cartModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
         if (!data) {
             res.status(404).send({
                 message: `Order not found.`
@@ -70,7 +75,7 @@ exports.update = async (req, res) => {
 };
 // Delete a user with the specified id in the request
 exports.destroy = async (req, res) => {
-    await OrderModel.findByIdAndRemove(req.params.id).then(data => {
+    await cartModel.findByIdAndRemove(req.params.id).then(data => {
         if (!data) {
             res.status(404).send({
                 message: `Order not found.`

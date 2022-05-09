@@ -8,7 +8,7 @@ const orderSchema = new Schema({
     },
     order: {
         type: Number,
-        required: true,
+        // required: true,
     },
     list:[
         {
@@ -27,6 +27,12 @@ const orderSchema = new Schema({
     user:{
         ref: 'users',
         type: Schema.Types.ObjectId
+    },
+    img:{
+        type: String,
+    },
+    name:{
+        type: String,
     }
 })
 
