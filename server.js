@@ -14,7 +14,7 @@ const {response} = require('express')
 const https = require('https')
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyparser.urlencoded({extended:true}))
 app.set('view engine', 'ejs')

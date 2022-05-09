@@ -8,6 +8,8 @@ const userSchema = new Schema({
         required: true,
         lowercase: true,
         unique: true,
+        sparse:true,
+        index:true,
     },
     password: {
         type: String,
@@ -28,7 +30,8 @@ const userSchema = new Schema({
     },
     roles: [
         {type: String,
-        ref: 'roles'}
+        ref: 'roles'
+        }
     ]
 })
 
