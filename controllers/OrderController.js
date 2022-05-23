@@ -18,7 +18,7 @@ exports.create = async (req, res) => {
     await order.save().then(data => {
         res.send({
             message:"Order created successfully!!",
-            user:data
+            // user:data
         });
     }).catch(err => {
         res.status(500).send({

@@ -1,11 +1,14 @@
 const mongoose = require('mongoose')
-const Schema =  mongoose.Schema
+const passportLocalMongoose=require('passport-local-mongoose')
+const passport = require('passport')
 
-const userSchema = new Schema({
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require('mongoose-findorcreate')
+
+let userSchema = new mongoose.Schema({
     name: String,
     email:{
         type: String,
-        required: true,
         lowercase: true,
         unique: true,
         sparse:true,
@@ -13,7 +16,6 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        required: true,
     },
     createdAt: {
         type: Date,
@@ -24,16 +26,21 @@ const userSchema = new Schema({
         type: Date,
         default: () => Date.now(),
     },
-    address: {
-        street: String,
-        city: String,
-    },
+    address: String,
+    city: String,
     roles: [
         {type: String,
         ref: 'roles'
         }
-    ]
+    ],
+
+    googleId: String
 })
+
+
+userSchema.plugin(passportLocalMongoose)
+userSchema.plugin(findOrCreate)
+
 
 userSchema.methods.sayHi = function() {
     console.log(`Hi. My name is ${this.name}`)
@@ -62,5 +69,33 @@ userSchema.pre('save', function (next){
 //     next()
 // })
 
+let userModel = new mongoose.model("User", userSchema);
 
-module.exports = mongoose.model("users", userSchema)
+passport.use(userModel.createStrategy())
+// passport.serializeUser(userModel.serializeUser())
+// passport.deserializeUser(userModel.deserializeUser())
+
+
+passport.serializeUser(function (user, done) {
+    done(null, user.id)
+})
+passport.deserializeUser(function (id, done) {
+    userModel.findById(id, function (err, user) {
+        done(err,user)
+    })
+})
+
+//level 6
+passport.use(new GoogleStrategy({
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        callbackURL: "http://localhost:3000/auth/google/online-store"
+    },
+    function(accessToken, refreshToken, profile, cb) {
+        userModel.findOrCreate({ googleId: profile.id }, function (err, user) {
+            return cb(err, user);
+        });
+    }
+));
+
+module.exports = userModel

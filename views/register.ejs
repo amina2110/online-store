@@ -5,15 +5,15 @@
 <%- include('header.ejs') %>
 
 <div class="container-fluid">
-    <form style="padding-left:100px;padding-right:100px;margin-top:50px;" method="post">
+    <form  style="padding-left:100px;padding-right:100px;margin-top:50px;" method="post" action="user//user/register">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" class="form-control">
             </div>
             <div class="form-group col-md-6">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control">
+                <label for="username">Email</label>
+                <input type="email" id="username" name="username" class="form-control">
             </div>
             <div class="form-group col-md-6">
                 <label for="password">Password</label>
@@ -31,17 +31,23 @@
                 <input type="text" class="form-control" id="city" name="city">
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
-            </div>
+        <div class="row">
+            <button type="submit" class="btn" style="background-color:#DAB88B;margin-right:20px;">Register</button>
+            <a href="/login" style="color:#DAB88B;"><h5 style="color:#DAB88B;margin-top:10px;background-color:#FDF6EC;">Login</h5></a>
         </div>
-        <button type="submit" class="btn" style="background-color:#DAB88B">Sign in</button>
     </form>
+</div>
+
+    <!--Google auth-->
+<div style="text-align:center; width:100%">
+    <a href="/auth/google">
+        <button type="button" style="width: 70%; padding: 10px; margin: 40px; background-color: cornflowerblue">
+            <div style="color: whitesmoke; font-size: 1.3rem">
+            <i class="fab fa-google"></i>
+                Sign Up with Google
+            </div>
+        </button>
+    </a>
 </div>
 
 

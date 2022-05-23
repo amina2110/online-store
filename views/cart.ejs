@@ -9,8 +9,30 @@
 <div class="container" style="margin-left:300px;margin-right:400px;">
     <h3 class="ml:auto mr:auto">Cart</h3>
     <br>
-            <p>Your cart is empty</p>
+    <%if (isEmpty){%>
+        <h5><i>Your cart is empty</i></h5>
+    <%}else {%>
+    <div class="container" style="border: 1px solid #DAB88B; width: 900px; margin-left:0">
+            <form action="cart/name?_method=DELETE" method="post">
+                <div class="row item" style="" >
+                    <input type="hidden" name="img" value=<%=img%> />
+            <img src="<%=img%>" style="width: 200px; height: 200px;border: 1px solid #DAB88B; padding: 1px; margin-right: 30px" alt="picture of item">
+            <div class="row-cols-1">
+                <input type="hidden" name="name" value="<%=name%>" />
+                <h4 class="justify-content-center"><%=name%></h4>
+                <hr style="background-color: #DAB88B">
+                <input type="hidden" name="cost" value="<%=cost%>" />
+                <h5><%=cost%></h5>
+                    <div class="row-cols-md-7">
+                        <button style="margin-top: 50px; margin-left: 30px; padding: 10px;width:150px; background-color: #BDE09A">Сheckout</button>
+                        <button style="padding: 10px;width:150px; background-color: lightcoral" type="submit" >Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <%}%>
 
 </div>
 <%- include('footer.ejs')%>

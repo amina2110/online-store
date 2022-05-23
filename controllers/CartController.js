@@ -15,15 +15,15 @@ exports.create = async (req, res) => {
     });
 
     await cart.save().then(data => {
-        res.send({
-            message:"Order created successfully!!",
-            user:data
-        });
+        // res.send({
+        //     message:"Order created successfully!!",
+        //     user:data
+        // });
         res.render("cart.ejs",{
-            // isEmpty: false,
-            // name: req.body.name,
+            isEmpty: false,
+            name: req.body.name,
             img: req.body.img,
-            // cost: req.body.cost,
+            cost: req.body.cost,
         })
     }).catch(err => {
         res.status(500).send({
@@ -74,20 +74,25 @@ exports.update = async (req, res) => {
     });
 };
 // Delete a user with the specified id in the request
-exports.destroy = async (req, res) => {
-    await cartModel.findByIdAndRemove(req.params.id).then(data => {
-        if (!data) {
-            res.status(404).send({
-                message: `Order not found.`
-            });
-        } else {
-            res.send({
-                message: "Order deleted successfully!"
-            });
-        }
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message
+exports.destroy = async (req, res) =>
+    {
+        //await UserModel.findByIdAndRemove(req.params.id).then(data => {
+        let name = req.body.name
+        await cartModel.deleteOne({name: name}).then(data => {
+            //await UserModel.findByIdAndRemove(req.query.id).then(data => {
+            //console.log(data)
+            if (data.deletedCount===0) {
+                //res.status(404).send({ message: `User not found.`});
+                res.status(404).send("Order not found")
+
+            } else {
+                //res.send({message: "User deleted successfully!"});
+
+                res.status(200).render("cart.ejs", {isEmpty: true})
+            }
+        }).catch(err => {
+            //res.status(500).send({ message: err.message });
+            res.status(500).send(err.message)
         });
-    });
-};
+    };
+

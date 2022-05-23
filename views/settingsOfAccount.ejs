@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs') %>
+<body>
+<%- include('header.ejs') %>
+
+<div class="container-fluid">
+    <form style="padding-left:100px;padding-right:100px;margin-top:50px;" action="/user/email?_method=PATCH" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" value='<%= name%>'>
+                <label for="username">Email</label>
+                <input type="hidden" name="oldEmail" value='<%= username%>'>
+                <input type="email" id="username" name="username" class="form-control" readonly value='<%= username%>'>
+                <label for="address">Address</label>
+                <input type="text" id="address" class="form-control" placeholder="1234 Main St" name="address" value='<%= address%>'>
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" name="city" value= '<%= city%>'>
+            </div>
+            <div class="col-md-6" style="margin-top: 20px">
+                <button style="width: 100%;margin: 10px; padding: 10px; background-color: #FFE4C4" type="submit"><h6>Update</h6></button>
+            </div>
+        </div>
+    </form>
+    <a href="/logout"> <button type="button" style="width: 60%; padding: 10px; background-color: #DEB887; margin: 30px 300px; border: 2px solid black"><h6>Log out</h6> </button></a>
+                <form action="/user/email?_method=DELETE" method="post">
+                    <input type="hidden" name="oldEmail" value='<%= username%>'>
+                    <button style="width: 60%; padding: 10px; background-color: #A9A9A9; margin: 30px 300px;" type="submit"><h6>Delete account</h6></button>
+                </form>
+</div>
+
+<%- include('footer.ejs')%>
+</body>
+</html>

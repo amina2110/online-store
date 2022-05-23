@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs') %>
+<body>
+<% if (!isSaved) {%>
+<%} else {%>
+    <%-include('alert.ejs')%>
+<%} %>
+<%- include('header.ejs') %>
+
+<div class="container-fluid">
+    <div style="margin-left:auto;margin-right:auto; margin-top:50px;">
+        <form action="/user/email?_method=PATCH" class="needs-validation" novalidate method="post">
+            <div class="row g-3">
+
+                <div class="col-sm-6">
+                    <label for="newFirstName" class="form-label">New Name</label>
+                    <input type="text" class="form-control" name="newName" id="newName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Valid name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="newEmail" class="form-label">New Email</label>
+                    <input type="text" class="form-control" name="newEmail" id="newEmail" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Valid email is required.
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <label for="newLastName" class="form-label">New Address</label>
+                    <input type="text" class="form-control" name="newAddress" id="newAddress" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Valid address is required.
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label for="newPhone" class="form-label">New City</label>
+                    <input type="text" class="form-control" name="newCity" id="newCity" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Valid city is required.
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="oldEmail" class="form-label">Current Email</label>
+                    <input type="text" class="form-control" name="oldEmail" id="oldEmail" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Valid email is required.
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Update</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<%- include('footer.ejs')%>
+
+</body>
+</html>

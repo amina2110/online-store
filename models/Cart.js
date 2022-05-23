@@ -16,6 +16,10 @@ const cartSchema = new Schema({
     cost: {
         required: false,
         type: String,
+    },
+    owner:{
+        type: mongoose.ObjectId,
+        ref: 'User'
     }
 })
 
