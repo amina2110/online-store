@@ -15,6 +15,7 @@ const CartController = require(__dirname+'/controllers/CartController')
 const {response} = require('express')
 const https = require('https')
 
+
 const session = require('express-session')
 const passport=require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -36,6 +37,32 @@ app.use(passport.session())
 
 app.use(methodOverride('_method'))
 app.use(bodyparser.json())
+
+const swaggerUi = require('swagger-ui-express')
+swaggerDocument = require('./swagger.json')
+
+// const swaggerJSDoc = require('swagger-jsdoc')
+// const swaggerUI = require('swagger-ui-express')
+//
+// const swaggerOptions ={
+//     definition: {
+//         openapi: '3.0.0',
+//         info:{
+//             title: 'My Online-Store',
+//             version: '1.0.0',
+//             description: 'Online-Store'
+//             contact:{
+//                 name: 'Someone',
+//             },
+//             servers:["http://localhost:3000"]
+//         }
+//     },
+//     apis:["server.js"]
+// }
+
+// const swaggerDocs = swaggerJSDoc(swaggerOptions)
+// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs))
+
 
 
 mongoose.Promise = global.Promise;
@@ -167,6 +194,8 @@ app.get("/logout",function (req, res){
     res.redirect("/")
 })
 
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(port, () =>
     console.log(`App listening at http://localhost:${port}`)

@@ -1,0 +1,338 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My Online-Store",
+    "description": "My online-store Application API",
+    "license": {
+      "name": "AITU",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "API for users in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/user": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Get all users in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "Get all users in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Get all users in system",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get all users in system",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "description": "Update the user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Update the user in system",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "User updated",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "description": "Delete the user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Delete the user in system",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "User deleted",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/cart": {
+      "post": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Create new cart in system",
+        "parameters": [
+          {
+            "name": "cart",
+            "in": "body",
+            "description": "Cart that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "New cart is created",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Get all carts in system",
+        "parameters": [
+          {
+            "name": "cart",
+            "in": "body",
+            "description": "Get all carts in system",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get all carts in system",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Update the cart in system",
+        "parameters": [
+          {
+            "name": "cart",
+            "in": "body",
+            "description": "Update the cart in system",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cart updated",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Delete the cart in system",
+        "parameters": [
+          {
+            "name": "cart",
+            "in": "body",
+            "description": "Delete the cart in system",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cart deleted",
+            "schema": {
+              "$ref": "#/definitions/Cart"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      }
+    }
+
+  },
+  "definitions": {
+    "User": {
+      "required": ["email"],
+      "properties": {
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        }
+      }
+    },
+    "Cart": {
+
+      "properties": {
+        "date": {
+          "type": "date",
+          "default": "Date.now"
+        },
+        "img": {
+          "type": "string",
+          "required": false
+        },
+        "name": {
+          "type": "string"
+        },
+        "cost": {
+          "required": false,
+          "type": "string"
+        },
+        "owner":{
+          "type": "mongoose.ObjectId",
+          "ref": "User"
+        }
+      }
+    }
+    },
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+    },
+  "Carts": {
+    "type": "array",
+    "$ref": "#/definitions/Cart"
+  }
+  }
+
